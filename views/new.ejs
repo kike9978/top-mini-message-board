@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new message</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <%- include("components/nav") %>
+
+        <h1>This is a new message</h1>
+        <form action="/new" method="post">
+
+            <%- include("components/input", {label: "Username" , required: true, id:"username" }) %>
+                <%- include("components/input", {label: "Message" , required: true, id:"messageText" }) %>
+                    <button>Create message</button>
+        </form>
+</body>
+
+</html>
