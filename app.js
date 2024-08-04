@@ -9,37 +9,37 @@ const messages = [
         user: "Usuario",
         body: "Me gusta este mensaje gigantísimo",
         added: new Date(),
-        id: 0,
+        id: "0",
     },
     {
         user: "Usuario",
         body: "Me gusta este mensaje gigantísimo",
         added: new Date(),
-        id: 1,
+        id: "1",
     },
     {
         user: "Usuario",
         body: "Me gusta este mensaje gigantísimo",
         added: new Date(),
-        id: 2,
+        id: "2",
     },
     {
         user: "Usuario",
         body: "Me gusta este mensaje gigantísimo",
         added: new Date(),
-        id: 3,
+        id: "3",
     },
     {
         user: "Usuario",
         body: "Me gusta este mensaje gigantísimo",
         added: new Date(),
-        id: 4,
+        id: "4",
     },
     {
-        user: "Usuario",
-        body: "Me gusta este mensaje gigantísimo",
+        user: "Loco Chaves",
+        body: "Solamente 2 pesos mexicano",
         added: new Date(),
-        id: 5,
+        id: "5",
     },
 ]
 
@@ -48,7 +48,7 @@ export function addToMessages(newMessage) {
 }
 
 export function getMessageById(messageId) {
-    return messages.find(message => message.id === Number(messageId, 10))
+    return messages.find(message => message.id === messageId)
 }
 const app = express()
 
