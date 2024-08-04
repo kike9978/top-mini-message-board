@@ -1,6 +1,7 @@
 import express from "express"
 import path from "path"
 import newMessageRouter from "./routes/new"
+import messagesRouter from "./routes/messages"
 
 const PORT = 8000
 const messages = [
@@ -59,7 +60,7 @@ app.set("view engine", "ejs")
 app.use(express.static(path.join(__dirname, "public")))
 app.use(express.urlencoded({ extended: true }))
 app.use("/new", newMessageRouter)
-
+app.use("/messages", messagesRouter)
 
 app.get("/", (req, res) => {
     res.render("index", { messages })
