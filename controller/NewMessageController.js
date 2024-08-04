@@ -1,5 +1,5 @@
-import { addToMessages } from "../app"
-import generateRandomId from "../utils/generateRandomId"
+import { addToMessages } from "../app.js"
+import generateRandomId from "../utils/generateRandomId.js"
 
 function getNewMessageForm(req, res) {
     res.render("new")

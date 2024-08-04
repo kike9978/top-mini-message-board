@@ -1,4 +1,4 @@
-import { getMessageById } from "../app"
+import { getMessageById } from "../app.js"
 
 function getMessage(req, res) {
     res.render("messageDetail", { message: getMessageById(req.params.messageId) })

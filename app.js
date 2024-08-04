@@ -1,8 +1,11 @@
 import express from "express"
 import path from "path"
-import newMessageRouter from "./routes/new"
-import messagesRouter from "./routes/messages"
+import { fileURLToPath } from 'url';
+import newMessageRouter from "./routes/new.js"
+import messagesRouter from "./routes/messages.js"
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const PORT = 8000
 const messages = [
     {
