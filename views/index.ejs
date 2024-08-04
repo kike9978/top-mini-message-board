@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 
-<body>
+<body class="bg-yellow-400">
     <%- include("components/nav") %>
-        <h1 class="text-xl">Messages</h1>
 
-        <div class="grid grid-cols-4 gap-2">
-            <% messages.forEach(message=> { %>
-                <%- include("components/message", {message}) %>
-                    <% }) %>
-
-        </div>
+        <main>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-4 mx-4">
+                <% messages.forEach(message=> { %>
+                    <%- include("components/message", {message, formatDate}) %>
+                        <% }) %>
+            </div>
+        </main>
 </body>
 
 </html>

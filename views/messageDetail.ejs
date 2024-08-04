@@ -9,18 +9,25 @@
 
 </head>
 
-<body>
+<body class="bg-yellow-400 ">
     <%- include("components/nav") %>
-        <h2 class="text-lg font-bold">
-            <%= message.user %>
-        </h2>
-        <p>
-            <%= message.body %>
-        </p>
-        <p>Date:
-            <%= message.added %>
-
-        </p>
+        <main class="flex justify-center items-center gap-2 mt-4 mx-4">
+            <article class="p-3 rounded border border-solid border-black bg-white flex flex-col gap-4">
+                <p class="text-xl font-bold flex-grow ">
+                    <%= message.body %>
+                </p>
+                <div class="flex justify-between items-end">
+                    <div class="flex flex-col">
+                        <h2 class="font-extrabold text-sm">
+                            <%= message.user %>
+                        </h2>
+                        <p class="text-sm text-slate-600">Posted on:
+                            <%= message.added%>
+                        </p>
+                    </div>
+                </div>
+            </article>
+        </main>
 </body>
 
 

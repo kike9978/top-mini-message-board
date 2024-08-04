@@ -3,6 +3,7 @@ import path from "path"
 import { fileURLToPath } from 'url';
 import newMessageRouter from "./routes/new.js"
 import messagesRouter from "./routes/messages.js"
+import formatDate from "./utils/dateFormatter.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,30 +14,6 @@ const messages = [
         body: "Me gusta este mensaje gigantísimo",
         added: new Date(),
         id: "0",
-    },
-    {
-        user: "Usuario",
-        body: "Me gusta este mensaje gigantísimo",
-        added: new Date(),
-        id: "1",
-    },
-    {
-        user: "Usuario",
-        body: "Me gusta este mensaje gigantísimo",
-        added: new Date(),
-        id: "2",
-    },
-    {
-        user: "Usuario",
-        body: "Me gusta este mensaje gigantísimo",
-        added: new Date(),
-        id: "3",
-    },
-    {
-        user: "Usuario",
-        body: "Me gusta este mensaje gigantísimo",
-        added: new Date(),
-        id: "4",
     },
     {
         user: "Loco Chaves",
@@ -64,7 +41,7 @@ app.use("/new", newMessageRouter)
 app.use("/messages", messagesRouter)
 
 app.get("/", (req, res) => {
-    res.render("index", { messages })
+    res.render("index", { messages, formatDate })
 })
 
 app.listen(PORT, () => {
