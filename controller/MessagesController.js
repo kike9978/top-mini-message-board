@@ -1,11 +1,12 @@
-import { getMessageById } from "../app"
+const messageStore = require('../models/messageStore');  // Adjust path if needed
 
 function getMessage(req, res) {
-    res.render("messageDetail", { message: getMessageById(req.params.messageId) })
+    const message = messageStore.getMessageById(req.params.messageId);
+    res.render("messageDetail", { message: message });
 }
 
 const messagesController = {
     getMessage
-}
+};
 
-export default messagesController
+module.exports = messagesController;

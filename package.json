@@ -1,5 +1,7 @@
 {
-  "tyep": "module",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.19.2"

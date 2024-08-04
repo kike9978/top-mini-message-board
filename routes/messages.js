@@ -1,8 +1,8 @@
-import { Router } from "express";
-import messagesController from "../controller/MessagesController";
+const { Router } = require("express")
+const messagesController = require("../controller/MessagesController")
 
 const messagesRouter = Router()
 
 messagesRouter.get("/:messageId", messagesController.getMessage)
 
-export default messagesRouter
+module.exports = messagesRouter

@@ -1,9 +1,9 @@
-import { Router } from "express";
-import newMessageController from "../controller/NewMessageController";
+const { Router } = require("express");
+const newMessageController = require("../controller/NewMessageController");
 
 const newMessageRouter = Router()
 
 newMessageRouter.get("/", newMessageController.getNewMessageForm)
 newMessageRouter.post("/", newMessageController.postNewMessage)
 
-export default newMessageRouter
+module.exports = newMessageRouter
