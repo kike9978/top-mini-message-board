@@ -11,8 +11,17 @@
 
 <body>
     <%- include("components/nav") %>
-        <p>Your message id is: <%= messageId %>
+        <h2 class="text-lg font-bold">
+            <%= message.user %>
+        </h2>
+        <p>
+            <%= message.body %>
+        </p>
+        <p>Date:
+            <%= message.added %>
+
         </p>
 </body>
+
 
 </html>

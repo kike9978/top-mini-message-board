@@ -1,5 +1,7 @@
+import { getMessageById } from "../app"
+
 function getMessage(req, res) {
-    res.render("message", { messageId: req.params.messageId })
+    res.render("message", { message: getMessageById(req.params.messageId) })
 }
 
 const messagesController = {

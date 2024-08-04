@@ -15,12 +15,6 @@ const messages = [
         user: "Usuario",
         body: "Me gusta este mensaje gigantísimo",
         added: new Date(),
-        id: 0,
-    },
-    {
-        user: "Usuario",
-        body: "Me gusta este mensaje gigantísimo",
-        added: new Date(),
         id: 1,
     },
     {
@@ -51,6 +45,10 @@ const messages = [
 
 export function addToMessages(newMessage) {
     messages.unshift(newMessage)
+}
+
+export function getMessageById(messageId) {
+    return messages.find(message => message.id === Number(messageId, 10))
 }
 const app = express()
 
