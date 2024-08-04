@@ -13,11 +13,18 @@
     <%- include("components/nav") %>
 
         <h1>This is a new message</h1>
-        <form action="/new" method="post">
+        <form action="/new" method="post" class="flex flex-col">
 
             <%- include("components/input", {label: "Username" , required: true, id:"username" }) %>
-                <%- include("components/input", {label: "Message" , required: true, id:"messageText" }) %>
-                    <button>Create message</button>
+                <label class="flex flex-col">
+                    <span class="font-bold">
+                        Message
+                    </span>
+                    <textarea class="border border-solid border-slate-300 px-1" required id="messageText"
+                        name="messageText" maxlength="200"></textarea>
+                </label>
+                max: 200 character
+                <button>Add message</button>
         </form>
 </body>
 
