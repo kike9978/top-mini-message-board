@@ -1,4 +1,4 @@
-import pool from "./dbPool";
+import pool from "./dbPool.js";
 
 async function getMessages() {
     const { rows } = await pool.query("SELECT message, username, created_at, messages.id FROM messages JOIN users ON users.id = userId;")
