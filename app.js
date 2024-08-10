@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import newMessageRouter from "./routes/new.js"
 import messagesRouter from "./routes/messages.js"
 import formatDate from "./utils/dateFormatter.js";
+import db from "./db/queries.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -40,7 +41,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use("/new", newMessageRouter)
 app.use("/messages", messagesRouter)
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
+    const messages = await db.getMessages()
+
     res.render("index", { messages, formatDate })
 })
 

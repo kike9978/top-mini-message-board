@@ -17,17 +17,31 @@
             <article class="flex flex-col bg-white rounded border border-solid border-black p-4 mt-20 w-96 mx-4">
                 <h2 class="text-lg">New message</h2>
                 <form action="/new" method="post" class="flex flex-col gap-3 mt-2">
-                    <%- include("components/input", {label: "Username" , required: true, id:"username" }) %>
-                        <label class="flex flex-col">
-                            <span class="font text-slate-700">
-                                Message
-                            </span>
-                            <textarea class="border border-solid border-slate-300 px-1" required id="messageText"
-                                name="messageText" maxlength="200"></textarea>
-                        </label>
-                        <p class="text-right text-sm text-slate-500">max: 200 characters</p>
-                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg">Add
-                            message</button>
+                    <label class="flex flex-col">
+                        <span class="font text-slate-700">
+                            Message
+                        </span>
+                        <select class="border border-solid border-slate-300 px-1 h-9" required id="messageText"
+                            name="username">
+                            <option value="">--Select user--</option>
+                            <% userList.forEach(user=> { %>
+                                <option value="<%= user.id %>">
+                                    <%= user.username %>
+                                </option>
+
+                                <% }) %>
+                        </select>
+                    </label>
+                    <label class="flex flex-col">
+                        <span class="font text-slate-700">
+                            Message
+                        </span>
+                        <textarea class="border border-solid border-slate-300 px-1" required id="messageText"
+                            name="message" maxlength="200"></textarea>
+                    </label>
+                    <p class="text-right text-sm text-slate-500">max: 200 characters</p>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg">Add
+                        message</button>
                 </form>
             </article>
         </main>

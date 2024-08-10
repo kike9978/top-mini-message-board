@@ -1,13 +1,16 @@
 import { addToMessages } from "../app.js"
 import generateRandomId from "../utils/generateRandomId.js"
+import db from "../db/queries.js"
 
-function getNewMessageForm(req, res) {
-    res.render("new")
+async function getNewMessageForm(req, res) {
+    const userList = await db.getFullUserLIst()
+    console.log(userList)
+    res.render("new", { userList })
 }
 
-function postNewMessage(req, res) {
-
-    addToMessages({ user: req.body.username, body: req.body.messageText, added: new Date(), id: generateRandomId() })
+async function postNewMessage(req, res) {
+    const date = new Date()
+    await db.insertMessage({ message: req.body.message, created_at: date }, req.body.username)
     res.redirect("/")
 }
 
